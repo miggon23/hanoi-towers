@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    text-align: center;
+}
+
+.towers-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.tower {
+    width: 200px;
+    height: 300px;
+    border: 3px solid #333;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index: 1; /* Asegura que las torres estén detrás de los discos */
+}
+
+.pole {
+    width: 10px;
+    height: 250px;
+    background-color: #333;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: absolute; /* Mantener la pole posicionada dentro de la torre */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Asegura que las poleas se vean por encima de las torres */
+}
+
+.disc {
+    height: 20px;
+    margin: 5px auto;
+    border-radius: 5px;
+    position: absolute; /* Absoluto dentro de la torre */
+    bottom: 0;
+    z-index: 10; /* Asegurar que los discos estén siempre al frente */
+    transition: transform 1s ease, bottom 1s ease;
+}
+
+.disc-1 { width: 60px; background-color: #46c1fa; } /* DodgerBlue */
+.disc-2 { width: 80px; background-color: #1e90ff; } /* Orange */
+.disc-3 { width: 100px; background-color: #90ee90; } /* Khaki */
+.disc-4 { width: 120px; background-color: #f0e68c; } /* LightGreen */
+.disc-5 { width: 140px; background-color: #ffa500; } /* Tomato */
+.disc-6 { width: 160px; background-color: #ff6347; } /* Tomato */

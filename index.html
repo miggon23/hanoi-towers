@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torres de Hanoi</title>
+    <!-- Enlazar el archivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Torres de Hanoi</h1>
+        
+        <p>Introduce el número de discos:</p>
+        <input type="number" id="numDiscos" min="1" max="5" value="3">
+
+        <!-- Añadir el slider para controlar la velocidad -->
+        <p>Velocidad de la animación (ms por movimiento):</p>
+        <input type="range" id="velocidad" min="100" max="2000" value="1000" step="100" oninput="mostrarVelocidad()">
+        <span id="valorVelocidad">1000 ms</span>
+
+        <br><br>
+        <button onclick="iniciarHanoi()">Iniciar</button>
+        
+        <div class="towers-container">
+            <div class="tower" id="torreA">
+                <div class="pole"></div>
+            </div>
+            <div class="tower" id="torreB">
+                <div class="pole"></div>
+            </div>
+            <div class="tower" id="torreC">
+                <div class="pole"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/hanoi.js"></script>
+</body>
+</html>
