@@ -48,7 +48,7 @@ function moverVisualmente(origen, destino, velocidad) {
     const desplazamiento = posDestino - posOrigen;
 
     // Antes de mover el disco, ajustar z-index
-    disco.style.zIndex = "10"; // Asegurar que se mantenga al frente
+    disco.style.zIndex = "20"; // Asegurar que se mantenga al frente
 
     // Ajustar la posición de "bottom" para apilar los discos correctamente
     disco.style.bottom = `${(numDiscosEnDestino - 1) * 25}px`;
@@ -61,8 +61,10 @@ function moverVisualmente(origen, destino, velocidad) {
     setTimeout(() => {
         torreDestino.appendChild(disco);
         disco.style.transform = ''; // Resetear la transformación una vez colocado
+        disco.style.zIndex = "10"; // Restablecer el z-index después de mover
     }, velocidad); // Ajustar el tiempo para que coincida con la duración de la animación
 }
+
 
 
 function moverDiscos(n, origen, destino, auxiliar, delay = 500) {
