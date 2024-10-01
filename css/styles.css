@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
+    background-color: #88d4e766;
 }
 
 h1 {
@@ -14,6 +14,16 @@ h1 {
 
 .container {
     text-align: center;
+}
+
+.vertical-container{
+    align-content: end;
+}
+
+.description-container{
+    text-align: left;
+    position: relative;
+    margin-top: 20px;
 }
 
 .towers-container {
@@ -36,9 +46,9 @@ h1 {
 }
 
 .pole {
-    width: 10px;
-    height: 250px;
-    background-color: #333;
+    width: 8px;
+    height: 270px;
+    background-color: #5a4b38cc;
     margin-top: 20px;
     border-radius: 5px;
     position: absolute; /* Mantener la pole posicionada dentro de la torre */
@@ -58,9 +68,30 @@ h1 {
     transition: transform 1s ease, bottom 1s ease;
 }
 
-.disc-1 { width: 60px; background-color: #46c1fa; } /* DodgerBlue */
-.disc-2 { width: 80px; background-color: #1e90ff; } /* Orange */
-.disc-3 { width: 100px; background-color: #90ee90; } /* Khaki */
-.disc-4 { width: 120px; background-color: #f0e68c; } /* LightGreen */
-.disc-5 { width: 140px; background-color: #ffa500; } /* Tomato */
-.disc-6 { width: 160px; background-color: #ff6347; } /* Tomato */
+.project-info {
+    position: relative;
+    margin: 20px;
+
+    h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 0 0 15px 0;
+    }
+
+    p, ul {
+        margin: 0 0 15px 0;
+        font-size: 0.9em;
+        list-style-type:none;
+    }    
+}
+
+.disc-1 { width: 20px; background-color: #ffffff; } /* LightGreen */
+.disc-2 { width: 40px; background-color: #46c1fa; } /* DodgerBlue */
+.disc-3 { width: 60px; background-color: #1e90ff; } /* Blue */
+.disc-4 { width: 80px; background-color: #65aa65; } /* Khaki */
+.disc-5 { width: 100px; background-color: #304e30; } /* Khaki */
+.disc-6 { width: 120px; background-color: #ffa500; } /* orange */
+.disc-7 { width: 140px; background-color: #ff6347; } /* Tomato */
+.disc-8 { width: 160px; background-color: #642c15; } /* Tomato */
+.disc-9 { width: 180px; background-color: #0c1116; } /* Tomato */
+

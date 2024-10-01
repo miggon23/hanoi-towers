@@ -4,6 +4,8 @@ let towers = {
     C: []
 };
 
+let remainingMoves = 0;
+
 // Mostrar la velocidad en el span cada vez que se mueve el slider
 function mostrarVelocidad() {
     const velocidad = document.getElementById("velocidad").value;
@@ -16,9 +18,14 @@ function crearDiscos(numDiscos) {
     const torreC = document.getElementById("torreC");
 
     // Limpiar todas las torres
-    torreA.innerHTML = '';
-    torreB.innerHTML = '';
-    torreC.innerHTML = '';
+    const discosA = torreA.querySelectorAll('.disc');
+    discosA.forEach(disco => disco.remove());
+    
+    const discosB = torreB.querySelectorAll('.disc');
+    discosB.forEach(disco => disco.remove());
+    
+    const discosC = torreC.querySelectorAll('.disc');
+    discosC.forEach(disco => disco.remove());
 
     // Resetear el estado de las torres
     towers = { A: [], B: [], C: [] };
@@ -31,6 +38,8 @@ function crearDiscos(numDiscos) {
         torreA.appendChild(disc);
         towers.A.push(disc); // Añadir el disco a la torre A
     }
+    remainingMoves = Math.pow(2, numDiscos) - 1;
+    actualizarTiempoRestante();
 }
 
 function moverVisualmente(origen, destino, velocidad) {
@@ -62,14 +71,23 @@ function moverVisualmente(origen, destino, velocidad) {
         torreDestino.appendChild(disco);
         disco.style.transform = ''; // Resetear la transformación una vez colocado
         disco.style.zIndex = "10"; // Restablecer el z-index después de mover
+        remainingMoves--;
+        actualizarTiempoRestante();
     }, velocidad); // Ajustar el tiempo para que coincida con la duración de la animación
 }
 
+function actualizarTiempoRestante(){
+    const velocidad = parseInt(document.getElementById("velocidad").value);
+    remainingTime = (remainingMoves * velocidad) / 1000;
 
+    document.getElementById("valor-movimientos-restantes").textContent = `${remainingMoves} movimientos restantes`
+    document.getElementById("estimated-time").textContent = `${remainingTime} segundos restantes`;
+}
 
 function moverDiscos(n, origen, destino, auxiliar, delay = 500) {
     // Obtener la velocidad del slider
     const velocidad = parseInt(document.getElementById("velocidad").value);
+    // console.log(`Velocidad: ${velocidad} ms`);
 
     if (n === 1) {
         setTimeout(() => {

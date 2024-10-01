@@ -8,31 +8,38 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <h1>Torres de Hanoi</h1>
-        
-        <p>Introduce el número de discos:</p>
-        <input type="number" id="numDiscos" min="1" max="5" value="3">
-
-        <!-- Añadir el slider para controlar la velocidad -->
-        <p>Velocidad de la animación (ms por movimiento):</p>
-        <input type="range" id="velocidad" min="100" max="2000" value="1000" step="100" oninput="mostrarVelocidad()">
-        <span id="valorVelocidad">1000 ms</span>
-
-        <br><br>
-        <button onclick="iniciarHanoi()">Iniciar</button>
-        
-        <div class="towers-container">
-            <div class="tower" id="torreA">
-                <div class="pole"></div>
+    <div class="vertical-container">
+        <div class="container">
+            <h1>Torres de Hanoi</h1>
+            
+            <p>Introduce el número de discos:</p>
+            <input type="number" id="numDiscos" min="1" max="9" value="3">
+    
+            <!-- Añadir el slider para controlar la velocidad -->
+            <p>Velocidad de la animación (ms por movimiento):</p>
+            <input type="range" id="velocidad" min="100" max="2000" value="1000" step="100" oninput="mostrarVelocidad()">
+            <span id="valorVelocidad">1000 ms</span>
+    
+            <br><br>
+            <button onclick="iniciarHanoi()">Iniciar</button>
+            
+            <div class="towers-container">
+                <div class="tower" id="torreA">
+                    <div class="pole" id="poleA"></div>
+                </div>
+                <div class="tower" id="torreB">
+                    <div class="pole" id="poleB"></div>
+                </div>
+                <div class="tower" id="torreC">
+                    <div class="pole" id="poleC"></div>
+                </div>
             </div>
-            <div class="tower" id="torreB">
-                <div class="pole"></div>
-            </div>
-            <div class="tower" id="torreC">
-                <div class="pole"></div>
-            </div>
+        </div>
+        <div class="description-container">
+            <p id="valor-movimientos-restantes">0 movimientos restantes</p>
+            <p id="estimated-time">0 segundos restantes</p>
+            <!-- <span id="valorMovimientosRestantes">0 movimientos restantes</span>
+            <span id="valorVelocidad">0 segundos restantes</span> -->
         </div>
     </div>
 
